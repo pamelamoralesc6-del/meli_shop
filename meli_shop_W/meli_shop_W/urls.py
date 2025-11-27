@@ -1,5 +1,5 @@
 """
-URL configuration for meli_shop_W project.
+URL configuration for hola_EHG project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -15,8 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include  # ¡Asegúrate de importar 'include'!
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # Esto le dice a Django que cualquier visita a la raíz ('')
+    # debe ser manejada por el archivo urls.py de la app 'nucleo'
+    path('', include('nucleo.urls')),
 ]
